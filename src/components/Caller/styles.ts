@@ -71,3 +71,56 @@ export const UnderTitle = styled.h2`
     }
   }
 `;
+
+export const CTA = styled.h2`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 80px 0;
+  & > a {
+    padding: 8px 24px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    & > span {
+      margin-left: 8px;
+    }
+  }
+  @media (min-width: 768px) {
+    justify-content: center;
+    & > a {
+      cursor: pointer;
+      margin-left: 8px;
+    }
+  }
+`;
+
+export const LinkedIn = styled.a`
+  background-color: #65a261;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  color: #0f1018;
+  border: 1px solid #65a261;
+  transition: all 0.3s ease;
+  &:hover {
+    transition: all 0.3s ease;
+    background-color: #0f1018;
+    color: #65a261;
+  }
+`;
+
+export const Github = styled.a`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid #65a261;
+  color: #65a261;
+  transition: all 0.3s ease;
+  &:hover {
+    transition: all 0.3s ease;
+    background-color: #bfd8bd;
+  }
+`;

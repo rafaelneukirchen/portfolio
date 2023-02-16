@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { CiFacebook, CiInstagram, CiLinkedin, CiYoutube } from "react-icons/Ci";
 import { RiSuitcaseLine, RiArrowRightLine } from "react-icons/Ri";
 import { FiMail } from "react-icons/fi";
-import { AiOutlineUser } from "react-icons/ai";
+import { AiOutlineArrowUp, AiOutlineUser } from "react-icons/ai";
 import { MdOutlineLibraryBooks } from "react-icons/md";
 import { IoIosMegaphone } from "react-icons/io";
 import isMobile from "../../hooks/useMobile";
@@ -12,6 +12,7 @@ import * as S from "./styles";
 const Header: React.FC = () => {
   const [isClosed, setClosed] = useState(true);
   const navigate = useNavigate();
+  const [scrollTopVisible, setScrolltopVisible] = useState(false);
 
   interface MenuOptionsProps {
     image: string;
@@ -47,6 +48,11 @@ const Header: React.FC = () => {
     },
   ];
 
+  const goTop = useCallback(() => {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }, []);
+
   const toggleMenu = useCallback(() => {
     setClosed((isActive) => !isActive);
   }, [isClosed]);
@@ -62,8 +68,15 @@ const Header: React.FC = () => {
         let elementYpos = document
           .querySelector(`#${link}`)!
           .getBoundingClientRect();
+        if (isMobile()) {
+          window.scrollTo({
+            top: window.scrollY + elementYpos.top,
+            behavior: "smooth",
+          });
+          return;
+        }
         window.scrollTo({
-          top: window.scrollY + elementYpos.top - 60,
+          top: window.scrollY + elementYpos.top - 100,
           behavior: "smooth",
         });
       }, 300);
@@ -72,6 +85,7 @@ const Header: React.FC = () => {
   );
 
   useEffect(() => {
+    if (isMobile()) return;
     const scrollProgress = document.getElementById("scroll-progress");
     const height =
       document.documentElement.scrollHeight -
@@ -82,7 +96,20 @@ const Header: React.FC = () => {
         document.body.scrollTop || document.documentElement.scrollTop;
       scrollProgress!.style.width = `${(scrollTop / height) * 100}%`;
     });
-  }, [window]);
+
+    window.addEventListener("scroll", () => {
+      document.body.scrollTop > 120 || document.documentElement.scrollTop > 120
+        ? setScrolltopVisible(true)
+        : setScrolltopVisible(false);
+    });
+
+    //mobile
+    window.addEventListener("touchmove", () => {
+      document.body.scrollTop > 120 || document.documentElement.scrollTop > 120
+        ? setScrolltopVisible(true)
+        : setScrolltopVisible(false);
+    });
+  }, [window, document]);
 
   const Links = useMemo(() => {
     return (
@@ -167,6 +194,9 @@ const Header: React.FC = () => {
           <S.ProgressBar id="scroll-progress"></S.ProgressBar>
         </S.Head>
       )}
+      <S.GoTopButton visible={scrollTopVisible} onClick={() => goTop()}>
+        <AiOutlineArrowUp size={32} />
+      </S.GoTopButton>
     </header>
   );
 };

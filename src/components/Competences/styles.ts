@@ -8,14 +8,15 @@ interface CompetenceProps {
 const fadeInLeft = keyframes`
   0% {
     opacity: 0;
-    transform: scale(.1);
+    transform: scale(0);
   }
 
   85% {
-    opacity: 1;
-    transform: scale(1.05);
+    opacity: 0.4;
   }
+
   100% {
+    opacity: 1;
     transform: scale(1);
   }
 `;
@@ -36,7 +37,7 @@ export const Competence = styled.div<CompetenceProps>`
   flex-wrap: wrap;
   align-items: center;
   height: 40px;
-  animation: ${fadeInLeft} 0.3s linear;
+  animation: ${fadeInLeft} 0.6s linear;
   animation-fill-mode: both;
 
   & > div {
@@ -59,35 +60,35 @@ export const Competence = styled.div<CompetenceProps>`
   }
 
   &:nth-child(1) {
-    animation-delay: calc(${(props) => props.index} * 0.5s);
+    animation-delay: calc(${(props) => props.index} * 0.3s);
   }
 
   &:nth-child(2) {
-    animation-delay: calc(${(props) => props.index} * 0.5s);
+    animation-delay: calc(${(props) => props.index} * 0.3s);
   }
 
   &:nth-child(3) {
-    animation-delay: calc(${(props) => props.index} * 0.5s);
+    animation-delay: calc(${(props) => props.index} * 0.3s);
   }
 
   &:nth-child(4) {
-    animation-delay: calc(${(props) => props.index} * 0.5s);
+    animation-delay: calc(${(props) => props.index} * 0.3s);
   }
 
   &:nth-child(5) {
-    animation-delay: calc(${(props) => props.index} * 0.5s);
+    animation-delay: calc(${(props) => props.index} * 0.3s);
   }
 
   &:nth-child(6) {
-    animation-delay: calc(${(props) => props.index} * 0.5s);
+    animation-delay: calc(${(props) => props.index} * 0.3s);
   }
 
   &:nth-child(7) {
-    animation-delay: calc(${(props) => props.index} * 0.5s);
+    animation-delay: calc(${(props) => props.index} * 0.3s);
   }
 
   &:nth-child(8) {
-    animation-delay: calc(${(props) => props.index} * 0.5s);
+    animation-delay: calc(${(props) => props.index} * 0.3s);
   }
 
   ${(props) =>

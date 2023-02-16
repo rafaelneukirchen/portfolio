@@ -1,4 +1,5 @@
 import React from "react";
+import AboutMe from "../../components/AboutMe";
 import Caller from "../../components/Caller";
 import CarouselSection from "../../components/CarouselSection";
 import Header from "../../components/Header";
@@ -12,6 +13,7 @@ const Home: React.FC = () => {
         <Caller />
         <CarouselSection />
       </S.ContentWrapper>
+      <AboutMe />
     </main>
   );
 };

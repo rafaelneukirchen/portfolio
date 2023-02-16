@@ -15,13 +15,14 @@ const fadeIn = keyframes`
 export const Project = styled.div`
   display: flex;
   flex-wrap: wrap;
-  align-itens: center;
+  align-items: center;
   justify-content: center;
   margin-top: 40px;
   padding: 0 24px;
   @media (min-width: 768px) {
     margin-top: 0px;
     padding: 0 24px;
+    border-left: 4px solid #65a261;
   }
 `;
 
@@ -48,7 +49,7 @@ export const ProjectTitle = styled.div`
     font-size: 44px;
     animation: ${fadeIn} ease-in-out 1s;
     position: relative;
-    margin: 0 0 24px 0;
+    margin: -6px 0 24px 0;
     & > span {
       color: #bfd8bd;
       font-size: 22px;
@@ -69,4 +70,10 @@ export const ProjectTitle = styled.div`
     margin-bottom: 16px;
     animation: ${fadeIn} ease-in-out 1s;
   }
+`;
+
+export const CompetenceFigures = styled.div`
+  display: flex;
+  margin: 16px 0 8px;
+  justify-content: space-between;
 `;

@@ -1,4 +1,6 @@
-import React, { useCallback, useEffect, useRef } from "react";
+import React, { useCallback, useEffect } from "react";
+import { CiLinkedin } from "react-icons/Ci";
+import { FaGithub } from "react-icons/Fa";
 import Typed from "typed.js";
 import * as S from "./styles";
 
@@ -63,6 +65,17 @@ const Caller: React.FC = () => {
           <p>eclético 🎶</p>
         </div>
       </S.UnderTitle>
+      <S.CTA>
+        <S.LinkedIn
+          href="https://www.linkedin.com.br/in/rafaelneukirchen"
+          target={"_blank"}
+        >
+          <CiLinkedin size={24} /> <span>LinkedIn</span>
+        </S.LinkedIn>
+        <S.Github href="https://github.com/rafaelneukirchen" target={"_blank"}>
+          <FaGithub size={24} /> <span>GitHub</span>
+        </S.Github>
+      </S.CTA>
     </S.Caller>
   );
 };

@@ -176,3 +176,38 @@ export const ProgressBar = styled.div`
   height: 4px;
   background: #65a261;
 `;
+
+interface GoTopButtonProps {
+  visible: boolean;
+}
+
+export const GoTopButton = styled.button<GoTopButtonProps>`
+  background: transparent;
+  z-index: 9;
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  color: #65a261;
+  border: 1px solid #65a261;
+  right: 8px;
+  bottom: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  ${(props) =>
+    props.visible
+      ? css`
+          opacity: 1;
+        `
+      : css`
+          opacity: 0;
+        `}
+  &:hover {
+    transition: all 0.3s ease;
+    background-color: #bfd8bd;
+  }
+`;

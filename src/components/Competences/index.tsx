@@ -1,5 +1,4 @@
 import React from "react";
-import { useInView } from "react-intersection-observer";
 import * as S from "./styles";
 
 interface CompetencesProps {
@@ -7,11 +6,8 @@ interface CompetencesProps {
 }
 
 const Competences: React.FC<CompetencesProps> = ({ data }) => {
-  const { ref, inView, entry } = useInView({
-    threshold: 0,
-  });
   return (
-    <S.CompetenceWrapper ref={ref} className={inView ? "animate" : ""}>
+    <S.CompetenceWrapper>
       {data.map((competence, i) => {
         return (
           <S.Competence index={i} key={i}>

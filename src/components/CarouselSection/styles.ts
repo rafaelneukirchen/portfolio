@@ -27,19 +27,26 @@ export const Swiper = styled(RootSwiper)`
   & > .swiper-button-next {
     width: 32px;
     height: 32px;
-    background-color: #bfd8bd;
-    border-radius: 10px;
+    border: 1px solid #65a261;
+    border-radius: 100px;
   }
 
   & > .swiper-button-prev::after,
   & > .swiper-button-next::after {
     font-size: 12px;
-    color: #65a261;
+    color: #bfd8bd;
   }
 
   & .swiper-wrapper .swiper-slide {
     position: relative;
     height: 100%;
+    padding-top: 4px;
+    transition: transform 0.3s ease;
+    transform: translateY(0px);
+    &:hover {
+      transition: transform 0.3s ease;
+      transform: translateY(-4px);
+    }
     &:after {
       content: "";
       z-index: 1;
@@ -98,7 +105,7 @@ export const Swiper = styled(RootSwiper)`
     & > p {
       color: #65a261;
       position: absolute;
-      top: 0px;
+      top: 4px;
       right: 0;
       font-size: 16px;
       font-weight: 900;
