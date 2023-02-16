@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const Caller = styled.div`
-  padding-top: 40px;
+  padding: 40px 24px 0;
   @media (min-width: 768px) {
-    padding-top: 80px;
-    & span {
+    padding: 80px 24px 0;
+    & > span {
       text-align: center;
     }
   }
@@ -33,15 +33,12 @@ export const UnderTitle = styled.h2`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  height: 150px;
+  height: 40px;
   padding-top: 8px;
   font-size: 22px;
   font-weight: 300;
   color: #bfd8bd;
-  margin-left: 32px;
-  & > span {
-    margin-right: 6px;
-  }
+
   & > div {
     width: fit-content;
     transition: transform 0.3s ease;
@@ -65,6 +62,12 @@ export const UnderTitle = styled.h2`
       position: relative;
       color: #65a261;
       font-weight: 900;
+    }
+  }
+  @media (min-width: 768px) {
+    margin-left: 32px;
+    & > span {
+      margin-right: 6px;
     }
   }
 `;

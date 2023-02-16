@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/scrollbar";
 import { careerProjects } from "../../careerprojects";
 import { CgScrollH } from "react-icons/Cg";
+import Project from "../Project";
 
 const CarouselSection: React.FC = () => {
   const [actualSlide, setActualSlide] = useState(0);
@@ -14,7 +15,7 @@ const CarouselSection: React.FC = () => {
   const verifyActualSwiper = useCallback(() => {
     setTimeout(() => {
       let activeSwiperSlide = document.querySelector(".swiper-slide-active");
-      setActualSlide(Number(activeSwiperSlide!.ariaLabel?.split("/")[0]));
+      setActualSlide(Number(activeSwiperSlide!.ariaLabel?.split("/")[0]) - 1);
     }, 200);
   }, []);
 
@@ -37,20 +38,25 @@ const CarouselSection: React.FC = () => {
             slidesPerView: 3,
           },
         }}
+        loop
         onSwiper={() => verifyActualSwiper()}
         onSlideChange={() => verifyActualSwiper()}
       >
-        {careerProjects.map((project, key) => {
+        {careerProjects.map((project, i) => {
           return (
-            <SwiperSlide key={key}>
-              <img src={project.image}></img>
+            <SwiperSlide key={i}>
+              <img
+                src={project.image}
+                alt={`Foto do projeto ${project.name}`}
+              ></img>
               <h3>{project.name}</h3>
               <h4>{project.company}</h4>
+              <p>{project.year}</p>
             </SwiperSlide>
           );
         })}
-        {actualSlide}
       </S.Swiper>
+      <Project actualSlide={actualSlide} />
     </S.SwiperWrapper>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useMemo } from "react";
+import React, { useCallback, useState, useMemo, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { CiFacebook, CiInstagram, CiLinkedin, CiYoutube } from "react-icons/Ci";
 import { RiSuitcaseLine, RiArrowRightLine } from "react-icons/Ri";
@@ -63,7 +63,7 @@ const Header: React.FC = () => {
           .querySelector(`#${link}`)!
           .getBoundingClientRect();
         window.scrollTo({
-          top: window.scrollY + elementYpos.top,
+          top: window.scrollY + elementYpos.top - 60,
           behavior: "smooth",
         });
       }, 300);
@@ -71,16 +71,26 @@ const Header: React.FC = () => {
     [setClosed]
   );
 
+  useEffect(() => {
+    const scrollProgress = document.getElementById("scroll-progress");
+    const height =
+      document.documentElement.scrollHeight -
+      document.documentElement.clientHeight;
+
+    window.addEventListener("scroll", () => {
+      const scrollTop =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      scrollProgress!.style.width = `${(scrollTop / height) * 100}%`;
+    });
+  }, [window]);
+
   const Links = useMemo(() => {
     return (
       <S.Links>
-        {menuOptions.map((option, i) => {
+        {menuOptions.map((option, index) => {
           return (
-            <>
-              <S.Link
-                key={`#-${i}`}
-                onClick={() => ScrollIntoSelectedMenuOption(option.link)}
-              >
+            <React.Fragment key={index}>
+              <S.Link onClick={() => ScrollIntoSelectedMenuOption(option.link)}>
                 <RiArrowRightLine className="arrow" color="#BFD8BD" size={22} />
                 {option.image == "mala" && (
                   <RiSuitcaseLine color="#BFD8BD" size={24} />
@@ -99,7 +109,7 @@ const Header: React.FC = () => {
                 )}
                 <span>{option.title}</span>
               </S.Link>
-            </>
+            </React.Fragment>
           );
         })}
       </S.Links>
@@ -151,7 +161,12 @@ const Header: React.FC = () => {
           </S.Body>
         </S.Background>
       )}
-      {!isMobile() && <S.Head>{Links}</S.Head>}
+      {!isMobile() && (
+        <S.Head>
+          <S.Links>{Links}</S.Links>
+          <S.ProgressBar id="scroll-progress"></S.ProgressBar>
+        </S.Head>
+      )}
     </header>
   );
 };

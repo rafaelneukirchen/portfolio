@@ -38,10 +38,11 @@ const Caller: React.FC = () => {
       typeSpeed: 120,
       backSpeed: 150,
       backDelay: 1400,
+      loop: true,
     };
 
     new Typed("#typer", options);
-    const interval = setInterval(roller, 3000);
+    setInterval(roller, 3000);
   }, []);
 
   return (
@@ -56,10 +57,10 @@ const Caller: React.FC = () => {
         <span>Um desenvolvedor</span>
         <div id="roller">
           <p className="selected">gamer 🎮</p>
-          <p>eclético 🎶</p>
-          <p>cozinheiro 👨‍🍳</p>
-          <p>pai de pet 🐈</p>
           <p>frontend pleno 💻</p>
+          <p>pai de pets 🐈</p>
+          <p>cozinheiro 👨‍🍳</p>
+          <p>eclético 🎶</p>
         </div>
       </S.UnderTitle>
     </S.Caller>

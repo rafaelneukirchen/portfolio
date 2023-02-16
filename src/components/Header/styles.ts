@@ -67,8 +67,7 @@ export const Links = styled.div`
   width: 100%;
   padding-top: 44px;
   @media (min-width: 768px) {
-    padding-top: 0;
-    max-width: 1200px;
+    padding: 8px 0;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -164,10 +163,16 @@ export const Link = styled.a`
 `;
 
 export const Head = styled.div`
-  width: 100%;
+  width: 100vw;
   display: flex;
+  position: fixed;
   flex-wrap: wrap;
-  position: absolute;
   top: 0;
   z-index: 1000;
+  background-color: #0f1018;
+`;
+
+export const ProgressBar = styled.div`
+  height: 4px;
+  background: #65a261;
 `;

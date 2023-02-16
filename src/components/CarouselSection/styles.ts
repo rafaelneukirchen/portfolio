@@ -3,7 +3,7 @@ import { Swiper as RootSwiper } from "swiper/react";
 
 export const SwiperWrapper = styled.div`
   margin-top: 20px;
-  & span {
+  & > span {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -25,13 +25,16 @@ export const Swiper = styled(RootSwiper)`
   position: relative;
   & > .swiper-button-prev,
   & > .swiper-button-next {
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
+    background-color: #bfd8bd;
+    border-radius: 10px;
   }
 
   & > .swiper-button-prev::after,
   & > .swiper-button-next::after {
     font-size: 12px;
+    color: #65a261;
   }
 
   & .swiper-wrapper .swiper-slide {
@@ -91,6 +94,23 @@ export const Swiper = styled(RootSwiper)`
       z-index: 2;
       text-align: center;
     }
+
+    & > p {
+      color: #65a261;
+      position: absolute;
+      top: 0px;
+      right: 0;
+      font-size: 16px;
+      font-weight: 900;
+      border-radius: 0 4px 0 4px;
+      background-color: #bfd8bd;
+      padding: 4px 8px;
+      z-index: 2;
+      text-align: center;
+    }
+  }
+  @media (min-width: 768px) {
+    margin-bottom: 80px;
   }
 `;
 

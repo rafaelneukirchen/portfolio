@@ -36,7 +36,9 @@ body {
 	font-size: 1rem;
 	color: #fff;
 	line-height: 1;
+	/* background: #18191a; */
 	background: #0F1018;
+	min-height: 200vh;
 }
 ol, ul {
 	list-style: none;
