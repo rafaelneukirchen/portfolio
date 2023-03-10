@@ -57,7 +57,7 @@ const Header: React.FC = () => {
     setClosed((isActive) => !isActive);
   }, [isClosed]);
 
-  const ScrollIntoSelectedMenuOption = useCallback(
+  const SmoothScroll = useCallback(
     (link: string) => {
       if (window.location.pathname !== "/") {
         navigate("/");
@@ -117,7 +117,7 @@ const Header: React.FC = () => {
         {menuOptions.map((option, index) => {
           return (
             <React.Fragment key={index}>
-              <S.Link onClick={() => ScrollIntoSelectedMenuOption(option.link)}>
+              <S.Link onClick={() => SmoothScroll(option.link)}>
                 <RiArrowRightLine className="arrow" color="#BFD8BD" size={22} />
                 {option.image == "mala" && (
                   <RiSuitcaseLine color="#BFD8BD" size={24} />
