@@ -1,9 +1,10 @@
 import axios from "axios";
-import { useCallback, useEffect, useState, useMemo } from "react";
+import { useCallback, useEffect, useState, useMemo, useRef } from "react";
 import * as S from "./styles";
 
 const AboutMe: React.FC = () => {
   const [spotifyItems, setSpotifyItems] = useState([]);
+  const selectRef = useRef(null);
   const getSpotifyPlaylist = useCallback(async (playlist_id: String) => {
     let token = import.meta.env.VITE_SPOTIFY_KEY;
     const { data } = await axios.get(
@@ -15,6 +16,12 @@ const AboutMe: React.FC = () => {
   }, []);
 
   useEffect(() => {
+    const select = document.querySelector("select");
+    if (select) {
+      select.addEventListener("change", () => {
+        getSpotifyPlaylist(select.value);
+      });
+    }
     getSpotifyPlaylist("6joiaX8Wua8CGZO2vq3JTi");
   }, [getSpotifyPlaylist]);
 
@@ -30,6 +37,12 @@ const AboutMe: React.FC = () => {
 
   return (
     <S.AboutMe id="sobre">
+      <select ref={selectRef}>
+        <option value={"5AhaPnGZJaeJNgkLzPnUqm"}>
+          bbno$, Yung, Roddy, Posty and every pop shit
+        </option>
+        <option value={"6joiaX8Wua8CGZO2vq3JTi"}>PEDRA</option>
+      </select>
       <div>{Songs}</div>
     </S.AboutMe>
   );
