@@ -170,6 +170,7 @@ export const Head = styled.div`
   top: 0;
   z-index: 1000;
   background-color: #0f1018;
+  box-shadow: 0px 0px 10px #bfd8bd15;
 `;
 
 export const ProgressBar = styled.div`

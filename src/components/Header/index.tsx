@@ -8,6 +8,7 @@ import { MdOutlineLibraryBooks } from "react-icons/md";
 import { IoIosMegaphone } from "react-icons/io";
 import isMobile from "../../hooks/useMobile";
 import * as S from "./styles";
+import { FaChessBoard } from "react-icons/Fa";
 
 const Header: React.FC = () => {
   const [isClosed, setClosed] = useState(true);
@@ -46,6 +47,11 @@ const Header: React.FC = () => {
       title: "Feedback",
       link: "feedback",
     },
+    {
+      image: "tabuleiro",
+      title: "Chess",
+      link: "chess",
+    },
   ];
 
   const goTop = useCallback(() => {
@@ -61,6 +67,9 @@ const Header: React.FC = () => {
     (link: string) => {
       if (window.location.pathname !== "/") {
         navigate("/");
+      }
+      if (link === "chess") {
+        navigate("/chess");
       }
 
       setClosed(true);
@@ -133,6 +142,9 @@ const Header: React.FC = () => {
                 )}
                 {option.image == "chamado" && (
                   <IoIosMegaphone color="#BFD8BD" size={24} />
+                )}
+                {option.image == "tabuleiro" && (
+                  <FaChessBoard color="#BFD8BD" size={24} />
                 )}
                 <span>{option.title}</span>
               </S.Link>
