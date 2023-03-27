@@ -59,13 +59,9 @@ const Chess: React.FC = () => {
     <main>
       <Header />
       <S.ContentWrapper>
-        <S.Whiteside className="left-side">Cemitério Branco</S.Whiteside>
-        <S.Blackside className="right-side">Cemitério Preto</S.Blackside>
-        <S.Head className="head">{colorTurn}</S.Head>
         <S.ChessTable className="game" id="board">
           <S.ChessOverlay id="overlay"></S.ChessOverlay>
         </S.ChessTable>
-        <S.Footer className="footer"></S.Footer>
       </S.ContentWrapper>
     </main>
   );

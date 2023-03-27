@@ -16,7 +16,7 @@ export const ContentWrapper = styled.div`
     grid-area: 2 / 1 / 5 / 2;
   }
   .footer {
-    grid-area: 5 / 1 / 6 / 6;
+    grid-area: 5 / 2 / 6 / 5;
   }
   .game {
     grid-area: 2 / 2 / 5 / 5;
@@ -67,11 +67,6 @@ export const ChessOverlay = styled.div`
     }
   }
 `;
-
-export const Head = styled.div``;
-export const Footer = styled.div``;
-export const Whiteside = styled.div``;
-export const Blackside = styled.div``;
 
 // > div {
 //   &[data-type="tower"] {
