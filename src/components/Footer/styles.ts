@@ -43,8 +43,11 @@ export const Technologies = styled.div`
   & > h3 {
     width: 100%;
     text-align: center;
-    margin-bottom: 24px;
     color: var(--primary-color);
+    margin-bottom: 6px;
+    @media (min-width: 768px) {
+      margin-bottom: 24px;
+    }
   }
 
   & span {
@@ -87,16 +90,29 @@ export const Link = styled.div``;
 
 export const SocialMedia = styled.div`
   width: 100%;
-  @media (min-width: 768px) {
-    width: 25%;
-  }
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 
   & > h3 {
     color: var(--secondary-color);
-    margin-bottom: 24px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+    width: 100%;
+    text-align: center;
   }
 
   & > a + a {
     margin-left: 8px;
+  }
+
+  @media (min-width: 768px) {
+    width: 25%;
+    display: block;
+    & > h3 {
+      text-align: left;
+      margin-top: 0;
+      margin-bottom: 24px;
+    }
   }
 `;
