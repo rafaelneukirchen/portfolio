@@ -16,8 +16,8 @@ const Home: React.FC = () => {
           <CarouselSection />
         </S.ContentWrapper>
         <AboutMe />
+        <Footer />
       </main>
-      <Footer />
     </>
   );
 };

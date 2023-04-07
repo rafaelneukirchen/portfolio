@@ -31,6 +31,7 @@ const Header: React.FC = () => {
         navigate("/");
       }
       if (link === "chess") {
+        setClosed(true);
         navigate("/chess");
       }
 
@@ -88,7 +89,14 @@ const Header: React.FC = () => {
         {menuOptions.map((option, index) => {
           return (
             <React.Fragment key={index}>
-              <S.Link onClick={() => SmoothScroll(option.link)}>
+              <S.Link
+                className={
+                  option.title.toLowerCase() === "chess" && isMobile()
+                    ? "hidden"
+                    : ""
+                }
+                onClick={() => SmoothScroll(option.link)}
+              >
                 <RiArrowRightLine className="arrow" color="#BFD8BD" size={22} />
                 {option.image == "mala" && (
                   <RiSuitcaseLine color="#BFD8BD" size={24} />
@@ -136,7 +144,7 @@ const Header: React.FC = () => {
                 <p>Me encontre nas redes sociais!</p>
               </div>
               <S.SocialWrapper>
-                <a target="_blank" href="https://www.instagram.com/fael_lo/">
+                <a target="_blank" href="https://www.instagram.com/faello.dev/">
                   <CiInstagram size={24} color="#BFD8BD" />
                 </a>
                 <a

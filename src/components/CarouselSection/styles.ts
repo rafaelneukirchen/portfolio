@@ -11,7 +11,7 @@ export const SwiperWrapper = styled.div`
     & > small {
       padding-right: 4px;
       font-size: 8px;
-      color: #bfd8bd;
+      color: var(--primary-color);
     }
   }
 
@@ -27,14 +27,14 @@ export const Swiper = styled(RootSwiper)`
   & > .swiper-button-next {
     width: 32px;
     height: 32px;
-    border: 1px solid #65a261;
+    border: 1px solid var(--secondary-color);
     border-radius: 100px;
   }
 
   & > .swiper-button-prev::after,
   & > .swiper-button-next::after {
     font-size: 12px;
-    color: #bfd8bd;
+    color: var(--primary-color);
   }
 
   & .swiper-wrapper .swiper-slide {
@@ -78,14 +78,14 @@ export const Swiper = styled(RootSwiper)`
       left: 50%;
       transform: translateX(-50%);
       text-align: center;
-      color: #bfd8bd;
+      color: var(--primary-color);
 
       &:after {
         content: "";
         width: 100%;
         height: 1px;
         left: 0;
-        background-color: #bfd8bd;
+        background-color: var(--primary-color);
         position: absolute;
         bottom: 0;
         transform: translateY(8px);
@@ -94,7 +94,7 @@ export const Swiper = styled(RootSwiper)`
 
     & > h4 {
       width: 100%;
-      color: #65a261;
+      color: var(--secondary-color);
       position: absolute;
       bottom: 20px;
       font-size: 12px;
@@ -103,14 +103,14 @@ export const Swiper = styled(RootSwiper)`
     }
 
     & > p {
-      color: #65a261;
+      color: var(--secondary-color);
       position: absolute;
       top: 4px;
       right: 0;
       font-size: 16px;
       font-weight: 900;
       border-radius: 0 4px 0 4px;
-      background-color: #bfd8bd;
+      background-color: var(--primary-color);
       padding: 4px 8px;
       z-index: 2;
       text-align: center;
@@ -131,9 +131,9 @@ export const Caller = styled.div`
 export const Title = styled.h1`
   font-size: 56px;
   text-align: center;
-  color: #bfd8bd;
+  color: var(--primary-color);
   & > span {
-    color: #65a261;
+    color: var(--secondary-color);
   }
 `;
 

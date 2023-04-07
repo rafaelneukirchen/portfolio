@@ -30,7 +30,7 @@ export const ChessTable = styled.div`
   height: 801px;
   width: 801px;
   display: grid;
-  background: #65a261;
+  background: var(--secondary-color);
   border: 1px solid #555;
 
   & td {

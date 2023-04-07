@@ -12,7 +12,7 @@ export const careerProjects: careerProjectsProps[] = [
   {
     company: "Freelancer",
     name: "Holy Moly Pizza",
-    text: "",
+    text: "Trabalho atualmente para a empresa Holy Moly Pizza como desenvolvedor Wordpress Sênior. A Holy Moly Pizza é uma empresa holandesa que atua no ramo de alimentação e delivery Express de pizzas. Durante minha experiência na empresa, tive a oportunidade de trabalhar como desenvolvedor na construção do seu site. Além disso, toda a comunicação no projeto foi feita completamente em inglês, o que me proporcionou aprimorar minha fluência no idioma.",
     image: "./holymoly.webp",
     competences: ["PHP", "WordPress", "HTML5", "Git"],
     year: 2023,

@@ -22,7 +22,7 @@ export const Project = styled.div`
   @media (min-width: 768px) {
     margin-top: 0px;
     padding: 0 24px;
-    border-left: 4px solid #65a261;
+    border-left: 4px solid var(--secondary-color);
   }
 `;
 
@@ -32,7 +32,7 @@ export const TextWrapper = styled.div`
   margin-top: 16px;
   animation: ${fadeIn} ease-in-out 1s;
   > p {
-    line-height: 125%;
+    line-height: 130%;
   }
 
   @media (min-width: 768px) {
@@ -44,7 +44,7 @@ export const TextWrapper = styled.div`
 export const ProjectTitle = styled.div`
   width: 100%;
   > h2 {
-    color: #65a261;
+    color: var(--secondary-color);
     font-weight: 900;
     font-size: 44px;
     animation: ${fadeIn} ease-in-out 1s;

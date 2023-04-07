@@ -15,10 +15,10 @@ export const Title = styled.h1`
   text-align: center;
   padding: 16px 0;
   letter-spacing: 2px;
-  color: #bfd8bd;
+  color: var(--primary-color);
   & > span {
     font-weight: 900;
-    color: #65a261;
+    color: var(--secondary-color);
   }
 `;
 
@@ -26,7 +26,7 @@ export const Subtitle = styled.h3`
   text-align: center;
   height: 20px;
   font-size: 22px;
-  color: #65a261;
+  color: var(--secondary-color);
 `;
 
 export const UnderTitle = styled.h2`
@@ -37,7 +37,7 @@ export const UnderTitle = styled.h2`
   padding-top: 8px;
   font-size: 22px;
   font-weight: 300;
-  color: #bfd8bd;
+  color: var(--primary-color);
 
   & > div {
     width: fit-content;
@@ -52,7 +52,7 @@ export const UnderTitle = styled.h2`
           position: absolute;
           width: 40px;
           height: 1px;
-          background-color: #bfd8bd;
+          background-color: var(--primary-color);
           left: 0;
           bottom: 0;
           transform: translate(0px, 8px);
@@ -60,7 +60,7 @@ export const UnderTitle = styled.h2`
       }
       width: 105%;
       position: relative;
-      color: #65a261;
+      color: var(--secondary-color);
       font-weight: 900;
     }
   }
@@ -97,17 +97,17 @@ export const CTA = styled.h2`
 `;
 
 export const LinkedIn = styled.a`
-  background-color: #65a261;
+  background-color: var(--secondary-color);
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  color: #0f1018;
-  border: 1px solid #65a261;
+  color: var(--dark-color);
+  border: 1px solid var(--secondary-color);
   transition: all 0.3s ease;
   &:hover {
     transition: all 0.3s ease;
-    background-color: #0f1018;
-    color: #65a261;
+    background-color: var(--dark-color);
+    color: var(--secondary-color);
   }
 `;
 
@@ -116,11 +116,11 @@ export const Github = styled.a`
   flex-wrap: wrap;
   align-items: center;
   background-color: transparent;
-  border: 1px solid #65a261;
-  color: #65a261;
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
   transition: all 0.3s ease;
   &:hover {
     transition: all 0.3s ease;
-    background-color: #bfd8bd;
+    background-color: var(--primary-color);
   }
 `;

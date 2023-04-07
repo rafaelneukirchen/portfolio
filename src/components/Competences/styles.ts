@@ -47,7 +47,7 @@ export const Competence = styled.div<CompetenceProps>`
     width: 40px;
     height: 40px;
     border-radius: 2px;
-    background-color: #bfd8bd;
+    background-color: var(--primary-color);
     color: #fefefe;
   }
 
@@ -94,10 +94,10 @@ export const Competence = styled.div<CompetenceProps>`
   ${(props) =>
     props.index
       ? css`
-          color: ${darken(`0.${props.index / 1.2 + 1}`, "#bfd8bd")};
+          color: ${darken(`0.${props.index / 1.1 + 1}`, "#bfd8bd")};
           & > div {
             background-color: ${darken(
-              `0.${props.index / 1.2 + 1}`,
+              `0.${props.index / 1.1 + 1}`,
               "#bfd8bd"
             )};
             color: #fefefe;

@@ -37,7 +37,7 @@ export const Nav = styled.button<BodyProps>`
 `;
 
 export const Background = styled.div<BodyProps>`
-  background: #1a2c1a;
+  background: var(--dark-green);
   width: 100%;
   height: 100vh;
   position: fixed;
@@ -56,7 +56,7 @@ export const Line = styled.div`
   width: 100%;
   height: 2px;
   border-radius: 4px;
-  background: #1a2c1a;
+  background: var(--dark-green);
 `;
 
 export const Body = styled.div`
@@ -146,11 +146,11 @@ export const Link = styled.a`
     &:hover {
       background-color: #bfd8bd;
       & > span {
-        color: #65a261;
+        color: var(--secondary-color);
       }
       & > svg {
-        color: #65a261;
-        fill: #65a261;
+        color: var(--secondary-color);
+        fill: var(--secondary-color);
       }
       & > svg.arrow {
         transition: 0.1s all ease-in-out;
@@ -169,13 +169,13 @@ export const Head = styled.div`
   flex-wrap: wrap;
   top: 0;
   z-index: 1000;
-  background-color: #0f1018;
+  background-color: var(--dark-color);
   box-shadow: 0px 0px 10px #bfd8bd15;
 `;
 
 export const ProgressBar = styled.div`
   height: 4px;
-  background: #65a261;
+  background: var(--secondary-color);
 `;
 
 interface GoTopButtonProps {
@@ -193,8 +193,8 @@ export const GoTopButton = styled.button<GoTopButtonProps>`
   align-items: center;
   justify-content: center;
   position: fixed;
-  color: #65a261;
-  border: 1px solid #65a261;
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
   right: 8px;
   bottom: 8px;
   cursor: pointer;
