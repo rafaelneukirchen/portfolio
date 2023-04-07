@@ -37,13 +37,13 @@ const AboutMe: React.FC = () => {
 
   return (
     <S.AboutMe id="sobre">
-      <select ref={selectRef}>
+      {/* <select ref={selectRef}>
         <option value={"5AhaPnGZJaeJNgkLzPnUqm"}>
           bbno$, Yung, Roddy, Posty and every pop shit
         </option>
         <option value={"6joiaX8Wua8CGZO2vq3JTi"}>PEDRA</option>
       </select>
-      <div>{Songs}</div>
+      <div>{Songs}</div> */}
     </S.AboutMe>
   );
 };

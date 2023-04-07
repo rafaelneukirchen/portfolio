@@ -5,14 +5,15 @@ export interface careerProjectsProps {
   image: string;
   competences: string[];
   year: number;
+  tags?: string[];
 }
 
 export const careerProjects: careerProjectsProps[] = [
   {
     company: "Freelancer",
     name: "Holy Moly Pizza",
-    text: "Trabalhar como desenvolvedor para uma barbearia com horário marcado, como a Barbearia Gardini, pode ser uma oportunidade interessante para quem busca desafios em um ambiente descontraído e inovador. Como desenvolvedor, é possível contribuir para o desenvolvimento de soluções tecnológicas que facilitem a marcação de horários e agendamentos, além de garantir a segurança dos dados dos clientes. A Barbearia Gardini é uma empresa moderna, que preza pelo atendimento personalizado e de qualidade, oferecendo serviços de barbearia, cortes de cabelo, entre outros. A equipe é formada por profissionais qualificados e experientes, que buscam oferecer a melhor experiência para os clientes, e valorizam a inovação e a tecnologia como meio de melhorar e simplificar processos.",
-    image: "./gardini.webp",
+    text: "",
+    image: "./holymoly.webp",
     competences: ["PHP", "WordPress", "HTML5", "Git"],
     year: 2023,
   },

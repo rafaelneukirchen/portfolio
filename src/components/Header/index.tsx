@@ -9,50 +9,12 @@ import { IoIosMegaphone } from "react-icons/io";
 import isMobile from "../../hooks/useMobile";
 import * as S from "./styles";
 import { FaChessBoard } from "react-icons/Fa";
+import { menuOptions } from "../allLinks";
 
 const Header: React.FC = () => {
   const [isClosed, setClosed] = useState(true);
   const navigate = useNavigate();
   const [scrollTopVisible, setScrolltopVisible] = useState(false);
-
-  interface MenuOptionsProps {
-    image: string;
-    title: string;
-    link: string;
-  }
-
-  const menuOptions: MenuOptionsProps[] = [
-    {
-      image: "mala",
-      title: "Carreira",
-      link: "carreira",
-    },
-    {
-      image: "livro",
-      title: "Skills",
-      link: "skills",
-    },
-    {
-      image: "personagem",
-      title: "Sobre",
-      link: "sobre",
-    },
-    {
-      image: "email",
-      title: "Contato",
-      link: "contato",
-    },
-    {
-      image: "chamado",
-      title: "Feedback",
-      link: "feedback",
-    },
-    {
-      image: "tabuleiro",
-      title: "Chess",
-      link: "chess",
-    },
-  ];
 
   const goTop = useCallback(() => {
     document.body.scrollTop = 0;
