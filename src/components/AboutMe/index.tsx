@@ -1,6 +1,8 @@
 import axios from "axios";
 import { useCallback, useEffect, useState, useMemo, useRef } from "react";
 import * as S from "./styles";
+import { useInView } from "react-intersection-observer";
+import isMobile from "../../hooks/useMobile";
 
 const AboutMe: React.FC = () => {
   // const [spotifyItems, setSpotifyItems] = useState([]);
@@ -35,8 +37,21 @@ const AboutMe: React.FC = () => {
   //   return;
   // }, [spotifyItems]);
 
+  const { ref, inView, entry } = useInView({
+    threshold: 0,
+  });
+
   return (
-    <S.AboutMe id="sobre">
+    <S.AboutMe>
+      {!isMobile() && (
+        <S.Parallax>
+          <S.ParallaxCourtain />
+          <S.ParallaxContent id="sobre">
+            <S.Content></S.Content>
+          </S.ParallaxContent>
+        </S.Parallax>
+      )}
+
       {/* <select ref={selectRef}>
         <option value={"5AhaPnGZJaeJNgkLzPnUqm"}>
           bbno$, Yung, Roddy, Posty and every pop shit

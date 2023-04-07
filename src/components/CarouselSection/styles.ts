@@ -3,6 +3,7 @@ import { Swiper as RootSwiper } from "swiper/react";
 
 export const SwiperWrapper = styled.div`
   margin-top: 20px;
+  margin-bottom: 20px;
   & > span {
     display: flex;
     flex-wrap: wrap;
@@ -17,6 +18,7 @@ export const SwiperWrapper = styled.div`
 
   @media (min-width: 768px) {
     margin-top: 40px;
+    margin-bottom: 40px;
   }
 `;
 

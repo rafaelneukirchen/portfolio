@@ -66,3 +66,15 @@ table {
 	--light-color: #ebebeb;
 	--dark-green: #1a2c1a;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+/* 
+::-webkit-scrollbar-track {
+} */
+
+::-webkit-scrollbar-thumb {
+  background: #bfd8bd;
+  border-radius: 4px;
+}
