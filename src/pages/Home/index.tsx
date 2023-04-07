@@ -5,6 +5,7 @@ import CarouselSection from "../../components/CarouselSection";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import * as S from "./styles";
+import Contact from "../../components/Contact";
 
 const Home: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const Home: React.FC = () => {
           <CarouselSection />
         </S.ContentWrapper>
         <AboutMe />
+        <Contact />
         <Footer />
       </main>
     </>
