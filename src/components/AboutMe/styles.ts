@@ -48,23 +48,27 @@ export const AboutMe = styled.div`
 `;
 
 export const Parallax = styled.div`
-  background: url("./background.webp") 100% 100% no-repeat;
+  background: url("./tree.gif") 100% 100% repeat;
   background-attachment: fixed;
   background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 400vh;
-  padding: 50vh 0 0 0;
+  background-size: contain;
+  padding: 50vh 0;
+  min-height: 250vh;
+  @media (min-width: 768px) {
+    min-height: 300vh;
+  }
 `;
 
 export const ParallaxContent = styled.div`
   position: absolute;
-  width: 100%;
+  width: 90vw;
   transform: translateX(-50%);
   left: 50%;
   max-width: 1440px;
-  height: 100%;
-  top: 100vh;
+  top: 25vh;
+  @media (min-width: 768px) {
+    top: 50vh;
+  }
 `;
 
 export const ParallaxCourtain = styled.div`
@@ -78,7 +82,139 @@ export const ParallaxCourtain = styled.div`
 
 export const Content = styled.div`
   background: var(--dark-color);
+  padding: 32px;
+  border-radius: 5px;
   margin: 0 auto;
-  z-index: 1;
-  height: 300vh;
+  // height: 300vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+`;
+
+export const Profile = styled.div`
+  grid-area: 1 / 1 / 1 / 3;
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+export const Picture = styled.div`
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+  width: 70%;
+  & > img {
+    width: 100%;
+    height: 100%;
+    max-width: 250px;
+    max-height: 250px;
+    border: 3px solid rgba(106, 106, 106, 0.4);
+    object-fit: contain;
+  }
+  &:after {
+    content: "";
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    background-color: var(--secondary-color);
+    right: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+`;
+
+export const ShortDescription = styled.div`
+  padding: 0 24px 0 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-self: start;
+  & > h3 {
+    width: 100%;
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--secondary-color);
+    margin-bottom: 16px;
+  }
+
+  & > p {
+    width: 100%;
+    margin-top: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    @media (min-width: 1000px) {
+      width: 50%;
+    }
+  }
+`;
+
+export const Description = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  width: 30%;
+  align-self: start;
+  & > h3 {
+    width: 100%;
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--secondary-color);
+    margin-bottom: 16px;
+  }
+
+  & > p {
+    width: 100%;
+    margin-top: 8px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+    & > span.gold {
+      color: #efb810;
+      font-weight: 800;
+    }
+
+    & > span.platinum {
+      color: #74fffd;
+      font-weight: 800;
+    }
+
+    & > span.red {
+      color: rgb(255, 75, 75);
+      font-weight: 500;
+    }
+  }
+`;
+
+export const Song = styled.div`
+  margin-bottom: 16px;
+  width: 100%;
+
+  & > h3 {
+    width: 100%;
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--secondary-color);
+    margin-bottom: 16px;
+  }
+`;
+
+export const Spotify = styled.div`
+  grid-area: 2 / 1 / 5 / 2;
+  background-color: green;
+`;
+
+export const Instagram = styled.div`
+  grid-area: 5 / 1 / 5 / 3;
+  background-color: purple;
+`;
+
+export const Hobbies = styled.div`
+  grid-area: 2 / 2 / 2 / 3;
+  background-color: blue;
+`;
+
+export const Religion = styled.div`
+  grid-area: 4 / 2 / 4 / 3;
+  background-color: pink;
+`;
+
+export const Something = styled.div`
+  grid-area: 3 / 2 / 3 / 3;
+  background-color: gray;
 `;

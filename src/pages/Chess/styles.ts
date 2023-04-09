@@ -40,11 +40,11 @@ export const ChessTable = styled.div`
   }
 
   & tr:nth-child(odd) td:nth-child(odd) {
-    background-color: #bfd8bd;
+    background-color: var(--primary-color);
   }
 
   & tr:nth-child(even) td:nth-child(even) {
-    background-color: #bfd8bd;
+    background-color: var(--primary-color);
   }
 `;
 

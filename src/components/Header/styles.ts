@@ -5,7 +5,7 @@ interface BodyProps {
 }
 
 export const Nav = styled.button<BodyProps>`
-  background: #bfd8bd;
+  background: var(--primary-color);
   width: 40px;
   height: 40px;
   border-radius: 2px;
@@ -81,7 +81,7 @@ export const Socials = styled.div`
   & p {
     margin-top: 64px;
     text-align: center;
-    color: #bfd8bd;
+    color: var(--primary-color);
   }
 `;
 
@@ -100,11 +100,11 @@ export const Link = styled.a`
   font-size: 22px;
   padding: 12px 4px 8px;
   background: none;
-  border-bottom: 1px solid #bfd8bd75;
+  border-bottom: 1px solid --var(primary-color);
   text-align: left;
   display: flex;
   & > span {
-    color: #bfd8bd;
+    color: var(--primary-color);
   }
 
   & > svg:not(.arrow) {
@@ -137,14 +137,14 @@ export const Link = styled.a`
 
     & > span {
       font-size: 16px;
-      color: #bfd8bd;
+      color: var(--primary-color);
     }
 
     & > svg {
     }
 
     &:hover {
-      background-color: #bfd8bd;
+      background-color: var(--primary-color);
       & > span {
         color: var(--secondary-color);
       }
@@ -170,7 +170,7 @@ export const Head = styled.div`
   top: 0;
   z-index: 1000;
   background-color: var(--dark-color);
-  box-shadow: 0px 0px 10px #bfd8bd15;
+  box-shadow: 0px 0px 10px --var(primary-color) 15;
 `;
 
 export const ProgressBar = styled.div`
@@ -209,6 +209,6 @@ export const GoTopButton = styled.button<GoTopButtonProps>`
         `}
   &:hover {
     transition: all 0.3s ease;
-    background-color: #bfd8bd;
+    background-color: var(--primary-color);
   }
 `;

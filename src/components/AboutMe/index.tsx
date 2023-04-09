@@ -1,8 +1,5 @@
-import axios from "axios";
-import { useCallback, useEffect, useState, useMemo, useRef } from "react";
 import * as S from "./styles";
 import { useInView } from "react-intersection-observer";
-import isMobile from "../../hooks/useMobile";
 
 const AboutMe: React.FC = () => {
   // const [spotifyItems, setSpotifyItems] = useState([]);
@@ -43,14 +40,60 @@ const AboutMe: React.FC = () => {
 
   return (
     <S.AboutMe>
-      {!isMobile() && (
-        <S.Parallax>
-          <S.ParallaxCourtain />
-          <S.ParallaxContent id="sobre">
-            <S.Content></S.Content>
-          </S.ParallaxContent>
-        </S.Parallax>
-      )}
+      <S.Parallax>
+        <S.ParallaxCourtain />
+        <S.ParallaxContent id="sobre">
+          <S.Content>
+            <S.Profile>
+              <S.Picture>
+                <img src="./imageOfMine.jpg"></img>
+                <S.ShortDescription>
+                  <h3>Rafael Neukirchen</h3>
+                  <p>💍 - Casado</p>
+                  <p>🛹 - Skatista</p>
+                  <p>👨‍🍳 - Cozinheiro</p>
+                  <p>🐈 - Pai de Pet</p>
+                  <p>🎮 - Gamer</p>
+                  <p>💻 - Desenvolvedor</p>
+                  <p style={{ marginTop: "24px" }}>
+                    <i>404 bugs resolvidos</i>
+                  </p>
+                </S.ShortDescription>
+              </S.Picture>
+              <S.Description>
+                <h3>Gaming</h3>
+                <p>
+                  <span className="gold">Ouro 3</span> no League of Legends
+                </p>
+                <p>
+                  <span className="gold">Ouro 2</span> no CS:GO
+                </p>
+                <p>
+                  <span className="platinum">Platina 4</span> em Apex Legends
+                </p>
+                <p>
+                  MMORPG <span className="red">Lover</span> (Diablo 4, World of
+                  Warcraft)
+                </p>
+                <h3 style={{ marginTop: "24px" }}>Setup</h3>
+                <p>PRIME A320M-K - ASUS</p>
+                <p>AMD Ryzen 3 3200G</p>
+                <p>2x8gb 3200MHz Ballistix</p>
+                <p>GeForce GTX 660 TI</p>
+                <p>ADATA SU630 240gb SSD</p>
+              </S.Description>
+              <S.Song>
+                <h3>Música-tema</h3>
+              </S.Song>
+            </S.Profile>
+            <S.Spotify />
+            <S.Hobbies />
+            <S.Something />
+            <S.Religion />
+            <S.Instagram />
+          </S.Content>
+        </S.ParallaxContent>
+      </S.Parallax>
 
       {/* <select ref={selectRef}>
         <option value={"5AhaPnGZJaeJNgkLzPnUqm"}>

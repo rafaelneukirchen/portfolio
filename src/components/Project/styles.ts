@@ -27,7 +27,7 @@ export const Project = styled.div`
 `;
 
 export const TextWrapper = styled.div`
-  color: #bfd8bd;
+  color: var(--primary-color);
   font-size: 16px;
   margin-top: 16px;
   animation: ${fadeIn} ease-in-out 1s;
@@ -51,7 +51,7 @@ export const ProjectTitle = styled.div`
     position: relative;
     margin: -6px 0 24px 0;
     & > span {
-      color: #bfd8bd;
+      color: var(--primary-color);
       font-size: 22px;
     }
     &:after {
@@ -59,7 +59,7 @@ export const ProjectTitle = styled.div`
       position: absolute;
       width: 50px;
       height: 1px;
-      background-color: #bfd8bd;
+      background-color: var(--primary-color);
       left: 0;
       bottom: 0;
       transform: translate(0px, 8px);
