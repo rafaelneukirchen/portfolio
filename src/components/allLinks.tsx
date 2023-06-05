@@ -1,10 +1,15 @@
+import i18n from "../i18n";
+import { useEffect } from "react";
+
 interface MenuOptionsProps {
   image: string;
   title: string;
   link: string;
 }
 
-export const menuOptions: MenuOptionsProps[] = [
+export let menuOptions: MenuOptionsProps[];
+
+const menuOptionsPt: MenuOptionsProps[] = [
   {
     image: "mala",
     title: "Carreira",
@@ -30,9 +35,46 @@ export const menuOptions: MenuOptionsProps[] = [
     title: "Feedback",
     link: "feedback",
   },
-  {
-    image: "tabuleiro",
-    title: "Chess",
-    link: "chess",
-  },
+  // {
+  //   image: "tabuleiro",
+  //   title: "Chess",
+  //   link: "chess",
+  // },
 ];
+
+const menuOptionsEn: MenuOptionsProps[] = [
+  {
+    image: "mala",
+    title: "Career",
+    link: "carreira",
+  },
+  {
+    image: "livro",
+    title: "Skills",
+    link: "skills",
+  },
+  {
+    image: "personagem",
+    title: "About",
+    link: "sobre",
+  },
+  {
+    image: "email",
+    title: "Contact",
+    link: "contato",
+  },
+  {
+    image: "chamado",
+    title: "Feedback",
+    link: "feedback",
+  },
+  // {
+  //   image: "tabuleiro",
+  //   title: "Chess",
+  //   link: "chess",
+  // },
+];
+
+i18n.language === "pt-BR"
+  ? (menuOptions = menuOptionsPt)
+  : (menuOptions = menuOptionsEn);

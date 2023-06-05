@@ -1,20 +1,34 @@
-import React, { useCallback, useState, useMemo, useEffect } from "react";
+import React, {
+  useCallback,
+  useState,
+  useMemo,
+  useEffect,
+  useRef,
+} from "react";
 import { useNavigate } from "react-router-dom";
 import { CiFacebook, CiInstagram, CiLinkedin, CiYoutube } from "react-icons/Ci";
 import { RiSuitcaseLine, RiArrowRightLine } from "react-icons/Ri";
 import { FiMail } from "react-icons/fi";
 import { AiOutlineArrowUp, AiOutlineUser } from "react-icons/ai";
-import { MdOutlineLibraryBooks } from "react-icons/md";
+import { MdLanguage, MdOutlineLibraryBooks } from "react-icons/md";
 import { IoIosMegaphone } from "react-icons/io";
 import isMobile from "../../hooks/useMobile";
 import * as S from "./styles";
 import { FaChessBoard } from "react-icons/Fa";
 import { menuOptions } from "../allLinks";
+import { useTranslation } from "react-i18next";
+import i18n from "../../i18n";
 
 const Header: React.FC = () => {
   const [isClosed, setClosed] = useState(true);
   const navigate = useNavigate();
   const [scrollTopVisible, setScrolltopVisible] = useState(false);
+  const [lang, setLang] = useState(
+    localStorage.getItem("i18nextLng") || "pt-BR"
+  );
+  const selectRef = useRef<HTMLSelectElement>(null);
+
+  const { t } = useTranslation();
 
   const goTop = useCallback(() => {
     document.body.scrollTop = 0;
@@ -81,7 +95,7 @@ const Header: React.FC = () => {
         ? setScrolltopVisible(true)
         : setScrolltopVisible(false);
     });
-  }, [window, document]);
+  }, [window, document, selectRef, lang]);
 
   const Links = useMemo(() => {
     return (
@@ -121,9 +135,29 @@ const Header: React.FC = () => {
             </React.Fragment>
           );
         })}
+        <S.Link>
+          <MdLanguage color="#BFD8BD" size={24} />
+          <S.Dropdown
+            ref={selectRef}
+            value={lang}
+            onChange={(e) => {
+              setLang(e.currentTarget.value);
+              localStorage.setItem("i18nextLng", e.currentTarget.value);
+              i18n.changeLanguage(e.currentTarget.value);
+              window.location.reload();
+            }}
+          >
+            <option id="en-US" value="en-US">
+              English
+            </option>
+            <option id="pt-BR" value="pt-BR">
+              Português
+            </option>
+          </S.Dropdown>
+        </S.Link>
       </S.Links>
     );
-  }, []);
+  }, [lang]);
 
   return (
     <header>
@@ -141,7 +175,7 @@ const Header: React.FC = () => {
             {Links}
             <S.Socials>
               <div>
-                <p>Me encontre nas redes sociais!</p>
+                <p>{t("header.socials")}</p>
               </div>
               <S.SocialWrapper>
                 <a target="_blank" href="https://www.instagram.com/faello.dev/">

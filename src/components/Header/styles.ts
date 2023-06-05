@@ -100,10 +100,11 @@ export const Link = styled.a`
   font-size: 22px;
   padding: 12px 4px 8px;
   background: none;
-  border-bottom: 1px solid --var(primary-color);
+  border-bottom: 1px solid var(--primary-color);
   text-align: left;
   display: flex;
-  & > span {
+  
+  & > span, & > select {
     color: var(--primary-color);
   }
 
@@ -135,7 +136,7 @@ export const Link = styled.a`
       transition: 0.1s all ease-in-out;
     }
 
-    & > span {
+    & > span, & > select {
       font-size: 16px;
       color: var(--primary-color);
     }
@@ -145,7 +146,7 @@ export const Link = styled.a`
 
     &:hover {
       background-color: var(--primary-color);
-      & > span {
+      & > span, & > select {
         color: var(--secondary-color);
       }
       & > svg {
@@ -210,5 +211,30 @@ export const GoTopButton = styled.button<GoTopButtonProps>`
   &:hover {
     transition: all 0.3s ease;
     background-color: var(--primary-color);
+  }
+`;
+
+export const Dropdown = styled.select`
+  width: fit-content;
+  appearance: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  background: none;
+  font-family: "Inter", sans-serif;
+  text-align: left;
+  display: flex;
+  font-size: 100%;
+  font-weight: 600;
+  vertical-align: baseline;
+  text-decoration: none;
+  color: var(--primary-color);
+  border-radius: 0;
+  &:focus-visible {
+    outline: none;
+  }
+  & > option {
+    appearance: none;
+    background: none;
   }
 `;

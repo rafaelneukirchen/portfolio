@@ -1,47 +1,4 @@
-import styled, { Keyframes, keyframes } from "styled-components";
-
-// const paperFlight = keyframes`
-// 0% {
-//   opacity: 0;
-//   transform: translateY(0px) rotateX(-17deg) rotateY(-24deg) rotateZ(6deg);
-// }
-
-// 1% {
-//   transform: translateY(200px) rotateX(-17deg) rotateY(-24deg) rotateZ(6deg);
-// }
-
-// 10% {
-//   transform: translateY(100px) rotateX(-7deg) rotateY(0deg) rotateZ(13deg);
-// }
-// 20% {
-//   transform: rotateX(13deg) rotateY(10deg) rotateZ(3deg) translateY(15px)
-// }
-// 30% {
-//   transform: rotate3d(1, 1, 0.5, 45deg);
-// }
-// 40% {
-//   transform: rotate3d(1, 1, 0.5, 45deg);
-// }
-// 50% {
-//   transform: rotate3d(1, 1, 0.5, 45deg);
-// }
-// 60% {
-//   transform: rotate3d(1, 1, 0.5, 45deg);
-// }
-// 70% {
-//   transform: rotate3d(1, 1, 0.5, 45deg);
-// }
-// 80% {
-//   transform: rotate3d(1, 1, 0.5, 45deg);
-// }
-// 90% {
-//   transform: rotate3d(1, 1, 0.5, 45deg);
-// }
-// 100% {
-//   transform: rotate3d(1, 1, 0.5, 45deg);
-//   opacity: 1;
-// }
-// `;
+import styled from "styled-components";
 
 export const AboutMe = styled.div`
   position: relative;
@@ -86,9 +43,18 @@ export const Content = styled.div`
   border-radius: 5px;
   margin: 0 auto;
   // height: 300vh;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  @media (max-width: 767) {
+    & > div {
+      width: 100%;
+    }
+  }
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
 `;
 
 export const Profile = styled.div`
@@ -99,35 +65,52 @@ export const Profile = styled.div`
 
 export const Picture = styled.div`
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  width: 100%;
   position: relative;
-  width: 70%;
+  @media (min-width: 768px) {
+    flex-wrap: nowrap;
+    width: 70%;
+    &:after {
+      content: "";
+      width: 1px;
+      height: 100%;
+      position: absolute;
+      background-color: var(--secondary-color);
+      right: 24px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
   & > img {
     width: 100%;
     height: 100%;
-    max-width: 250px;
-    max-height: 250px;
     border: 3px solid rgba(106, 106, 106, 0.4);
-    object-fit: contain;
-  }
-  &:after {
-    content: "";
-    width: 1px;
-    height: 100%;
-    position: absolute;
-    background-color: var(--secondary-color);
-    right: 24px;
-    top: 50%;
-    transform: translateY(-50%);
+    object-fit: cover;
+    text-align: center;
+    height: calc(85vw - 50px);
+    max-width: calc(85vw - 50px);
+    @media (min-width: 768px) {
+      object-fit: contain;
+      max-width: 250px;
+      max-height: 250px;
+    }
   }
 `;
 
 export const ShortDescription = styled.div`
-  padding: 0 24px 0 24px;
+  padding: 16px 0 0;
+  @media (min-width: 768px) {
+    padding: 0 24px 0 24px;
+  }
   display: flex;
   flex-wrap: wrap;
   align-self: start;
   & > h3 {
+    text-align: center;
+    @media (min-width: 768px) {
+      text-align: left;
+    }
     width: 100%;
     font-size: 40px;
     font-weight: 900;
@@ -149,9 +132,15 @@ export const ShortDescription = styled.div`
 export const Description = styled.div`
   display: flex;
   flex-wrap: wrap;
-  width: 30%;
+  @media (min-width: 768px) {
+    width: 30%;
+  }
   align-self: start;
   & > h3 {
+    text-align: center;
+    @media (min-width: 768px) {
+      text-align: left;
+    }
     width: 100%;
     font-size: 40px;
     font-weight: 900;
@@ -186,6 +175,10 @@ export const Song = styled.div`
   width: 100%;
 
   & > h3 {
+    text-align: center;
+    @media (min-width: 768px) {
+      text-align: left;
+    }
     width: 100%;
     font-size: 40px;
     font-weight: 900;

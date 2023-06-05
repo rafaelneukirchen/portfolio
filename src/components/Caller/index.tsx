@@ -2,6 +2,7 @@ import React, { useCallback, useEffect } from "react";
 import { CiLinkedin } from "react-icons/Ci";
 import { FaGithub } from "react-icons/Fa";
 import Typed from "typed.js";
+import { useTranslation } from "react-i18next";
 import * as S from "./styles";
 
 const Caller: React.FC = () => {
@@ -16,6 +17,8 @@ const Caller: React.FC = () => {
     "WordPress",
     "Typescript",
   ];
+
+  const { t } = useTranslation();
 
   const roller = useCallback(() => {
     const roller = document.querySelector("#roller");
@@ -53,16 +56,16 @@ const Caller: React.FC = () => {
         <span id="typer"></span>
       </S.Subtitle>
       <S.Title>
-        Olá, sou o <span>(Ra)</span>fael
+        {t("caller.hello")} <span>(Ra)</span>fael
       </S.Title>
       <S.UnderTitle>
-        <span>Um desenvolvedor</span>
+        <span>{t("caller.a_developer")}</span>
         <div id="roller">
-          <p className="selected">gamer 🎮</p>
-          <p>frontend pleno 💻</p>
-          <p>pai de pets 🐈</p>
-          <p>cozinheiro 👨‍🍳</p>
-          <p>eclético 🎶</p>
+          <p className="selected">{t("caller.roller.frontend")} 💻</p>
+          <p>{t("caller.roller.gamer")} 🎮</p>
+          <p>{t("caller.roller.pet_father")} 🐈</p>
+          <p>{t("caller.roller.chef")} 👨‍🍳</p>
+          <p>{t("caller.roller.ecletic")} 🎶</p>
         </div>
       </S.UnderTitle>
       <S.CTA>

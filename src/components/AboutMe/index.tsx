@@ -61,9 +61,13 @@ const AboutMe: React.FC = () => {
                 </S.ShortDescription>
               </S.Picture>
               <S.Description>
-                <h3>Gaming</h3>
+                <h3 style={{ marginTop: "24px" }}>Gaming</h3>
                 <p>
-                  <span className="gold">Ouro 3</span> no League of Legends
+                  <span className="gold">Ouro 1</span> no League of Legends
+                </p>
+                <p>
+                  <span className="platinum">Platina 3</span> no Team Fight
+                  Tactics
                 </p>
                 <p>
                   <span className="gold">Ouro 2</span> no CS:GO
@@ -75,6 +79,9 @@ const AboutMe: React.FC = () => {
                   MMORPG <span className="red">Lover</span> (Diablo 4, World of
                   Warcraft)
                 </p>
+                <p>
+                  Minecraft <span className="red">Lover ❤</span>
+                </p>
                 <h3 style={{ marginTop: "24px" }}>Setup</h3>
                 <p>PRIME A320M-K - ASUS</p>
                 <p>AMD Ryzen 3 3200G</p>
@@ -83,7 +90,7 @@ const AboutMe: React.FC = () => {
                 <p>ADATA SU630 240gb SSD</p>
               </S.Description>
               <S.Song>
-                <h3>Música-tema</h3>
+                <h3 style={{ marginTop: "24px" }}>Música-tema</h3>
               </S.Song>
             </S.Profile>
             <S.Spotify />

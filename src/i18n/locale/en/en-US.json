@@ -1,0 +1,18 @@
+{
+  "translation": {
+    "caller": {
+      "roller": {
+        "gamer": "gamer",
+        "frontend": "mid-level frontend developer",
+        "pet_father": "pet father",
+        "chef": "cousine lover",
+        "ecletic": "ecletic songs listener"
+      },
+      "a_developer": "I'm a",
+      "hello": "Hello! I am"
+    },
+    "header": {
+      "socials": "Find me on socials!"
+    }
+  }
+}
