@@ -15,7 +15,12 @@ const CarouselSection: React.FC = () => {
   const verifyActualSwiper = useCallback(() => {
     setTimeout(() => {
       let activeSwiperSlide = document.querySelector(".swiper-slide-active");
-      setActualSlide(Number(activeSwiperSlide!.ariaLabel?.split("/")[0]) - 1);
+      if (activeSwiperSlide) {
+        const index = activeSwiperSlide.getAttribute("data-swiper-slide-index");
+        if (index) {
+          setActualSlide(Number(index));
+        }
+      }
     }, 200);
   }, []);
 
