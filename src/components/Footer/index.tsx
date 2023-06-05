@@ -55,10 +55,10 @@ const Footer: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    tippy("#maestria", {
-      allowHTML: true,
-      content: "<img src='./m7.png' />",
-    });
+    // tippy("#maestria", {
+    //   allowHTML: true,
+    //   content: "<img src='./m7.png' />",
+    // });
     tippy("#typescript", {
       content: "Typescript",
     });
