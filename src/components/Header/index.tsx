@@ -144,7 +144,9 @@ const Header: React.FC = () => {
               setLang(e.currentTarget.value);
               localStorage.setItem("i18nextLng", e.currentTarget.value);
               i18n.changeLanguage(e.currentTarget.value);
-              window.location.reload();
+              if (isMobile()) {
+                window.location.reload();
+              }
             }}
           >
             <option id="en-US" value="en-US">

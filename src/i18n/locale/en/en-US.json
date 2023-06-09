@@ -13,6 +13,21 @@
     },
     "header": {
       "socials": "Find me on socials!"
+    },
+    "about_me": {
+      "married": "Married",
+      "skater": "Skateboarder",
+      "chef": "Cousine lover",
+      "pet_father": "Pet Father",
+      "gamer": "Gamer",
+      "developer": "Developer",
+      "bugs_solved": "404 solved bugs"
+    },
+    "gaming": {
+      "lol": "at League of Legends",
+      "tft": "at Team Fight Tactics",
+      "csgo": "at CS:GO",
+      "apex": "at Apex Legends"
     }
   }
 }

@@ -1,7 +1,9 @@
 import * as S from "./styles";
 import { useInView } from "react-intersection-observer";
+import { useTranslation } from "react-i18next";
 
 const AboutMe: React.FC = () => {
+  const { t } = useTranslation();
   // const [spotifyItems, setSpotifyItems] = useState([]);
   // const selectRef = useRef(null);
   // const getSpotifyPlaylist = useCallback(async (playlist_id: String) => {
@@ -49,35 +51,36 @@ const AboutMe: React.FC = () => {
                 <img src="./imageOfMine.jpg"></img>
                 <S.ShortDescription>
                   <h3>Rafael Neukirchen</h3>
-                  <p>💍 - Casado</p>
-                  <p>🛹 - Skatista</p>
-                  <p>👨‍🍳 - Cozinheiro</p>
-                  <p>🐈 - Pai de Pet</p>
-                  <p>🎮 - Gamer</p>
-                  <p>💻 - Desenvolvedor</p>
+                  <p>💍 - {t("about_me.married")}</p>
+                  <p>🛹 - {t("about_me.skater")}</p>
+                  <p>👨‍🍳 - {t("about_me.chef")}</p>
+                  <p>🐈 - {t("about_me.pet_father")}</p>
+                  <p>🎮 - {t("about_me.gamer")}</p>
+                  <p>💻 - {t("about_me.developer")}</p>
                   <p style={{ marginTop: "24px" }}>
-                    <i>404 bugs resolvidos</i>
+                    <i>{t("about_me.bugs_solved")}</i>
                   </p>
                 </S.ShortDescription>
               </S.Picture>
               <S.Description>
                 <h3 style={{ marginTop: "24px" }}>Gaming</h3>
                 <p>
-                  <span className="gold">Ouro 1</span> no League of Legends
+                  <span className="gold">Gold 1</span> {t("gaming.lol")}
                 </p>
                 <p>
-                  <span className="platinum">Platina 3</span> no Team Fight
+                  <span className="platinum">Platinum 3</span> {t("gaming.tft")}
                   Tactics
                 </p>
                 <p>
-                  <span className="gold">Ouro 2</span> no CS:GO
+                  <span className="gold">Gold 2</span> {t("gaming.csgo")}
                 </p>
                 <p>
-                  <span className="platinum">Platina 4</span> em Apex Legends
+                  <span className="platinum">Platinum 4</span>{" "}
+                  {t("gaming.apex")}
                 </p>
                 <p>
-                  MMORPG <span className="red">Lover</span> (Diablo 4, World of
-                  Warcraft)
+                  MMORPG <span className="red">Lover</span> (Diablo Series,
+                  World of Warcraft)
                 </p>
                 <p>
                   Minecraft <span className="red">Lover ❤</span>
@@ -89,15 +92,15 @@ const AboutMe: React.FC = () => {
                 <p>GeForce GTX 660 TI</p>
                 <p>ADATA SU630 240gb SSD</p>
               </S.Description>
-              <S.Song>
+              {/* <S.Song>
                 <h3 style={{ marginTop: "24px" }}>Música-tema</h3>
-              </S.Song>
+              </S.Song> */}
             </S.Profile>
-            <S.Spotify />
+            {/* <S.Spotify />
             <S.Hobbies />
             <S.Something />
             <S.Religion />
-            <S.Instagram />
+            <S.Instagram /> */}
           </S.Content>
         </S.ParallaxContent>
       </S.Parallax>
