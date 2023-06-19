@@ -11,8 +11,18 @@
       "a_developer": "Um desenvolvedor",
       "hello": "Olá! Eu sou o"
     },
+    "carousel": {
+      "swiper": "deslize para os lados"
+    },
     "header": {
       "socials": "Me encontre nas redes sociais!"
+    },
+    "footer": {
+      "socials": "Me encontre nas redes sociais!",
+      "made_with": "Feito com",
+      "mastery": "maestria",
+      "professional": "Profissional",
+      "individual": "Pessoal"
     },
     "about_me": {
       "married": "Casado",
@@ -28,6 +38,28 @@
       "tft": "no Team Fight Tactics",
       "csgo": "no CS:GO",
       "apex": "em Apex Legends"
+    },
+    "contact": {
+      "errors": {
+        "textbox": "Necessário preencher o texto",
+        "email": {
+          "required": "Necessário preencher o email",
+          "invalid": "Email inválido"
+        },
+        "fullname": "Necessário preencher o nome"
+      },
+      "placeholder": {
+        "textbox": "Entre em contato!",
+        "email": "Seu melhor email!",
+        "fullname": "Seu nome completo!"
+      },
+      "label": {
+        "textbox": "Mensagem",
+        "email": "Email",
+        "fullname": "Nome completo"
+      },
+      "feel_free": "Fique a vontade",
+      "to_send": "para mandar um email para mim!"
     }
   }
 }

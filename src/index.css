@@ -39,6 +39,9 @@ body {
 	/* background: #18191a; */
 	background: var(--dark-color);
 }
+button, a {
+	cursor: pointer;
+}
 ol, ul {
 	list-style: none;
 }

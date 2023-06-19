@@ -8,9 +8,11 @@ import "swiper/css/scrollbar";
 import { careerProjects } from "../../careerprojects";
 import { CgScrollH } from "react-icons/Cg";
 import Project from "../Project";
+import { useTranslation } from "react-i18next";
 
 const CarouselSection: React.FC = () => {
   const [actualSlide, setActualSlide] = useState(0);
+  const { t } = useTranslation();
 
   const verifyActualSwiper = useCallback(() => {
     setTimeout(() => {
@@ -27,7 +29,7 @@ const CarouselSection: React.FC = () => {
   return (
     <S.SwiperWrapper id="carreira">
       <span>
-        <small>Arraste para os lados</small>
+        <small>{t("carousel.swiper")}</small>
         <CgScrollH color="bfd8bd" size={24} />
       </span>
       <S.Swiper

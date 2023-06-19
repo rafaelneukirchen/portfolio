@@ -6,7 +6,6 @@ export const Footer = styled.div`
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  margin-top: 80px;
   padding: 40px 0;
   border-top: 1px solid var(--primary-color);
 `;

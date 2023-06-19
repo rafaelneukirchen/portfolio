@@ -7,9 +7,11 @@ import * as S from "./styles";
 import isMobile from "../../hooks/useMobile";
 import { SiStyledcomponents, SiTypescript } from "react-icons/Si";
 import { FaReact } from "react-icons/Fa";
+import { useTranslation } from "react-i18next";
 import { CiFacebook, CiInstagram, CiLinkedin, CiYoutube } from "react-icons/Ci";
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const SmoothScroll = useCallback((link: string) => {
     if (window.location.pathname !== "/") {
@@ -55,10 +57,10 @@ const Footer: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    // tippy("#maestria", {
-    //   allowHTML: true,
-    //   content: "<img src='./m7.png' />",
-    // });
+    tippy("#maestria", {
+      allowHTML: true,
+      content: "<img src='./maestria.png' height='50' />",
+    });
     tippy("#typescript", {
       content: "Typescript",
     });
@@ -69,10 +71,10 @@ const Footer: React.FC = () => {
       content: "Styled Components",
     });
     tippy("#profissional", {
-      content: "Instagram profissional",
+      content: `Instagram - ${t("footer.professional")}`,
     });
     tippy("#pessoal", {
-      content: "Instagram pessoal",
+      content: `Instagram - ${t("footer.individual")}`,
     });
   }, []);
 
@@ -85,9 +87,9 @@ const Footer: React.FC = () => {
         <S.Links>{Links}</S.Links>
         <S.Technologies>
           <h3>
-            Feito com{" "}
+            {t("footer.made_with")}{" "}
             <span style={{ textDecoration: "underline" }} id="maestria">
-              Maestria
+              {t("footer.mastery")}
             </span>
           </h3>
           <p>
@@ -98,7 +100,7 @@ const Footer: React.FC = () => {
         </S.Technologies>
       </S.Wrapper>
       <S.SocialMedia>
-        <h3>Redes sociais</h3>
+        <h3>{t("footer.socials")}</h3>
         <a
           title="Instagram pessoal de Rafael Neukirchen"
           target="_blank"

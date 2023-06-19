@@ -11,8 +11,18 @@
       "a_developer": "I'm a",
       "hello": "Hello! I am"
     },
+    "carousel": {
+      "swiper": "swipe to the sides"
+    },
     "header": {
       "socials": "Find me on socials!"
+    },
+    "footer": {
+      "socials": "Find me on socials!",
+      "made_with": "Made with",
+      "mastery": "mastery",
+      "professional": "professional",
+      "individual": "individual"
     },
     "about_me": {
       "married": "Married",
@@ -28,6 +38,28 @@
       "tft": "at Team Fight Tactics",
       "csgo": "at CS:GO",
       "apex": "at Apex Legends"
+    },
+    "contact": {
+      "errors": {
+        "textbox": "Text required",
+        "email": {
+          "required": "Email required",
+          "invalid": "Invalid email"
+        },
+        "fullname": "Name required"
+      },
+      "placeholder": {
+        "textbox": "Get in touch!",
+        "email": "Your best email!",
+        "fullname": "Your full name!"
+      },
+      "label": {
+        "textbox": "Message",
+        "email": "Email",
+        "fullname": "Full name"
+      },
+      "feel_free": "Feel free",
+      "to_send": "to send me an email!"
     }
   }
 }

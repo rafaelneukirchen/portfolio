@@ -44,10 +44,10 @@ const Header: React.FC = () => {
       if (window.location.pathname !== "/") {
         navigate("/");
       }
-      if (link === "chess") {
-        setClosed(true);
-        navigate("/chess");
-      }
+      // if (link === "chess") {
+      //   setClosed(true);
+      //   navigate("/chess");
+      // }
 
       setClosed(true);
       setTimeout(() => {
