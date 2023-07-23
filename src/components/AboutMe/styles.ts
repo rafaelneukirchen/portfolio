@@ -9,10 +9,11 @@ export const Parallax = styled.div`
   background-attachment: fixed;
   background-position: bottom;
   background-size: contain;
-  padding: 50vh 0;
-  min-height: 250vh;
+  padding: 0 0 75vh;
+  min-height: 100vh;
   @media (min-width: 768px) {
-    min-height: 300vh;
+    padding: 0;
+    min-height: 100vh;
   }
 `;
 
@@ -23,9 +24,9 @@ export const ParallaxContent = styled.div`
   left: 50%;
   max-width: 1440px;
   top: 25vh;
-  @media (min-width: 768px) {
-    top: 50vh;
-  }
+  // @media (min-width: 768px) {
+  //   top: 50vh;
+  // }
 `;
 
 export const ParallaxCourtain = styled.div`
@@ -45,7 +46,7 @@ export const Content = styled.div`
   // height: 300vh;
   display: flex;
   flex-wrap: wrap;
-  @media (max-width: 767) {
+  @media (max-width: 767px) {
     & > div {
       width: 100%;
     }
@@ -53,7 +54,7 @@ export const Content = styled.div`
   @media (min-width: 768px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(1, 1fr);
   }
 `;
 
