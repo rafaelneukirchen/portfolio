@@ -17,9 +17,6 @@ const Footer: React.FC = () => {
     if (window.location.pathname !== "/") {
       navigate("/");
     }
-    if (link === "chess") {
-      navigate("/chess");
-    }
 
     setTimeout(() => {
       let elementYpos = document

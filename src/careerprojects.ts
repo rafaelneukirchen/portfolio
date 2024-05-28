@@ -15,8 +15,25 @@ export let careerProjects: careerProjectsProps[];
 const careerProjectsPt: careerProjectsProps[] = [
   {
     company: "Freelancer",
+    name: "CRM7",
+    text: "Atualmente trabalho na CRM7 como Product Owner. Iniciei minha jornada na equipe como desenvolvedor backend e, desde o início, me interessei pelo trabalho com pessoas. Nas primeiras reuniões, percebi que tinha aptidão para entender as necessidades dos clientes e facilidade em transformar essas demandas em soluções inteligentes. No meu quinto mês, tornei-me Product Owner de um dos principais projetos da empresa, assumindo a responsabilidade pela garantia da qualidade dos serviços e das entregas.",
+    image: "./crm7.webp",
+    competences: [
+      "ZOHO",
+      "WordPress",
+      "NodeJS",
+      "Git",
+      "Yoast SEO",
+      "Axios",
+      "Git",
+      "HTML5",
+    ],
+    year: 2024,
+  },
+  {
+    company: "Freelancer",
     name: "Holy Moly Pizza",
-    text: "Trabalho atualmente para a empresa Holy Moly Pizza como desenvolvedor Wordpress Sênior. A Holy Moly Pizza é uma empresa holandesa que atua no ramo de alimentação e delivery Express de pizzas. Durante minha experiência na empresa, tive a oportunidade de trabalhar como desenvolvedor na construção do seu site. Além disso, toda a comunicação no projeto foi feita completamente em inglês, o que me proporcionou aprimorar minha fluência no idioma.",
+    text: "Trabalho atualmente para a empresa Holy Moly Pizza como desenvolvedor Wordpress. A Holy Moly Pizza é uma empresa holandesa que atua no ramo de alimentação e delivery Express de pizzas. Durante minha experiência na empresa, tive a oportunidade de trabalhar como desenvolvedor na construção do seu site. Além disso, toda a comunicação no projeto foi feita completamente em inglês, o que me proporcionou aprimorar minha fluência no idioma.",
     image: "./holymoly.webp",
     competences: ["PHP", "WordPress", "HTML5", "Git", "Yoast SEO", "Photoshop"],
     year: 2023,
@@ -143,8 +160,25 @@ const careerProjectsPt: careerProjectsProps[] = [
 const careerProjectsEn: careerProjectsProps[] = [
   {
     company: "Freelance",
+    name: "CRM7",
+    text: "I currently work at CRM7 as a Product Owner. I started my journey on the team as a backend developer and, from the beginning, I was interested in working with people. In the first meetings, he realized that he was required to understand customer needs and be able to transform these demands into intelligent solutions. In my fifth month, I became Product Owner of one of the company's main projects, taking responsibility for ensuring the quality of services and deliveries.",
+    image: "./holymoly.webp",
+    competences: [
+      "ZOHO",
+      "WordPress",
+      "NodeJS",
+      "Git",
+      "Yoast SEO",
+      "Axios",
+      "Git",
+      "HTML5",
+    ],
+    year: 2024,
+  },
+  {
+    company: "Freelance",
     name: "Holy Moly Pizza",
-    text: "I currently work for the company Holy Moly Pizza as a Full Wordpress developer. Holy Moly Pizza is a Dutch company that operates in the field of food and express delivery of pizzas. During my experience at the company, I had the opportunity to work as a developer on the construction of their website. In addition, all communication in the project was done completely in English, which allowed me to improve my fluency in the language.",
+    text: "I've worked for the company Holy Moly Pizza as a Full Wordpress developer. Holy Moly Pizza is a Dutch company that operates in the field of food and express delivery of pizzas. During my experience at the company, I had the opportunity to work as a developer on the construction of their website. In addition, all communication in the project was done completely in English, which allowed me to improve my fluency in the language.",
     image: "./holymoly.webp",
     competences: ["PHP", "WordPress", "HTML5", "Git", "Yoast SEO", "Photoshop"],
     year: 2023,
@@ -268,6 +302,11 @@ const careerProjectsEn: careerProjectsProps[] = [
   },
 ];
 
-i18n.language === "pt-BR"
-  ? (careerProjects = careerProjectsPt)
-  : (careerProjects = careerProjectsEn);
+switch (i18n.language) {
+  case "pt-BR":
+    careerProjects = careerProjectsPt;
+    break;
+  default:
+    careerProjects = careerProjectsEn;
+    break;
+}

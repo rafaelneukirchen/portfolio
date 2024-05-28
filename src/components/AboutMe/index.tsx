@@ -65,18 +65,17 @@ const AboutMe: React.FC = () => {
               <S.Description>
                 <h3 style={{ marginTop: "24px" }}>Gaming</h3>
                 <p>
+                  <span className="platinum">Platinum 4</span>{" "}
+                  {t("gaming.apex")}
+                </p>
+                <p>
+                  <span className="gold">Gold 4</span> {t("gaming.tft")}
+                </p>
+                <p>
                   <span className="gold">Gold 1</span> {t("gaming.lol")}
                 </p>
                 <p>
-                  <span className="platinum">Platinum 3</span> {t("gaming.tft")}
-                  Tactics
-                </p>
-                <p>
-                  <span className="gold">Gold 2</span> {t("gaming.csgo")}
-                </p>
-                <p>
-                  <span className="platinum">Platinum 4</span>{" "}
-                  {t("gaming.apex")}
+                  <span className="silver">Silver 4</span> {t("gaming.csgo")}
                 </p>
                 <p>
                   MMORPG <span className="red">Lover</span> (Diablo Series,
