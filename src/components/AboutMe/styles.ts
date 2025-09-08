@@ -24,9 +24,6 @@ export const ParallaxContent = styled.div`
   left: 50%;
   max-width: 1440px;
   top: 25vh;
-  // @media (min-width: 768px) {
-  //   top: 50vh;
-  // }
 `;
 
 export const ParallaxCourtain = styled.div`
@@ -43,7 +40,6 @@ export const Content = styled.div`
   padding: 32px;
   border-radius: 5px;
   margin: 0 auto;
-  // height: 300vh;
   display: flex;
   flex-wrap: wrap;
   @media (max-width: 767px) {

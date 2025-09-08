@@ -4,7 +4,6 @@ import { menuOptions } from "../allLinks";
 import tippy from "tippy.js";
 import "tippy.js/dist/tippy.css";
 import * as S from "./styles";
-import isMobile from "../../hooks/useMobile";
 import { SiStyledcomponents, SiTypescript } from "react-icons/Si";
 import { FaReact } from "react-icons/Fa";
 import { useTranslation } from "react-i18next";
@@ -35,13 +34,8 @@ const Footer: React.FC = () => {
       <S.Links>
         {menuOptions.map((option, index) => {
           return (
-            <React.Fragment key={index}>
+            <React.Fragment key={index+1}>
               <S.Link
-                className={
-                  option.title.toLowerCase() === "chess" && isMobile()
-                    ? "hidden"
-                    : ""
-                }
                 onClick={() => SmoothScroll(option.link)}
               >
                 <span>{option.title}</span>

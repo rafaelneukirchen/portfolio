@@ -1,31 +1,56 @@
 import i18n from "./i18n";
 
-export interface careerProjectsProps {
+export interface ICareerProjectsProps {
   company: string;
   name: string;
   text: string;
   image: string;
   competences: string[];
-  year: number;
+  year: number | string;
   tags?: string[];
 }
 
-export let careerProjects: careerProjectsProps[];
+const careerProjects: ICareerProjectsProps[] = [];
 
-const careerProjectsPt: careerProjectsProps[] = [
+const careerProjectsPt: ICareerProjectsProps[] = [
   {
-    company: "Freelancer",
+    company: "DMK3",
+    name: "ITESP - Fundação Instituto de Terras de São Paulo",
+    text: "Desenvolvi de forma ágil novas features para um sistema de controle de transporte, gestão de gastos e registro de cobranças, modernizando um sistema legado e integrando toda a base existente em banco de dados Oracle, o que garantiu continuidade operacional e possibilitou a evolução da plataforma sem a necessidade de migrações complexas.",
+    image: "./dmk3.png",
+    competences: [
+      "Oracle",
+      "NodeJS",
+      "React",
+      "MySQL",
+      "Git",
+    ],
+    year: 2025,
+  },
+  {
+    company: "Inovally",
+    name: "Sistema de Gestão de Documentos",
+    text: "Na Inovally, atuei como responsável por desenvolver o fluxo completo de login e cadastro via Firebase com controle de usuários, além da criação de menus de configuração personalizados para cada cliente, incluindo o gerenciamento de perfis e cargos na visão administrativa. Um dos principais marcos foi a entrega de interfaces para geração de documentos de ajuizamento, que agilizaram significativamente processos burocráticos nas prefeituras, facilitando a constatação de dívidas e contribuindo diretamente para maior eficiência na arrecadação municipal.",
+    image: "./inovally.webp",
+    competences: [
+      "NodeJS",
+      "Angular",
+      "React",
+      "Git",
+    ],
+    year: "2025-2024",
+  },
+  {
+    company: "Zoho",
     name: "CRM7",
-    text: "Atualmente trabalho na CRM7 como Product Owner. Iniciei minha jornada na equipe como desenvolvedor backend e, desde o início, me interessei pelo trabalho com pessoas. Nas primeiras reuniões, percebi que tinha aptidão para entender as necessidades dos clientes e facilidade em transformar essas demandas em soluções inteligentes. No meu quinto mês, tornei-me Product Owner de um dos principais projetos da empresa, assumindo a responsabilidade pela garantia da qualidade dos serviços e das entregas.",
-    image: "./crm7.webp",
+    text: "Trabalhei na CRM7 como Product Owner. Iniciei minha jornada na equipe como desenvolvedor backend e, desde o início, me interessei pelo trabalho com pessoas. Nas primeiras reuniões, percebi que tinha aptidão para entender as necessidades dos clientes e facilidade em transformar essas demandas em soluções inteligentes. No meu quinto mês, tornei-me Product Owner de um dos principais projetos da empresa, assumindo a responsabilidade pela garantia da qualidade dos serviços e das entregas.",
+    image: "./crm7.png",
     competences: [
       "ZOHO",
       "WordPress",
       "NodeJS",
       "Git",
       "Yoast SEO",
-      "Axios",
-      "Git",
       "HTML5",
     ],
     year: 2024,
@@ -49,7 +74,6 @@ const careerProjectsPt: careerProjectsProps[] = [
       "Styled Components",
       "NodeJS",
       "Express",
-      "Axios",
       "Git",
     ],
     year: 2023,
@@ -73,7 +97,6 @@ const careerProjectsPt: careerProjectsProps[] = [
       "Styled Components",
       "Typescript",
       "SEO",
-      "Axios",
       "Git",
     ],
     year: 2022,
@@ -118,7 +141,6 @@ const careerProjectsPt: careerProjectsProps[] = [
       "Typescript",
       "Styled Components",
       "Git",
-      "Axios",
       "SEO",
     ],
     year: 2021,
@@ -157,19 +179,44 @@ const careerProjectsPt: careerProjectsProps[] = [
   },
 ];
 
-const careerProjectsEn: careerProjectsProps[] = [
+const careerProjectsEn: ICareerProjectsProps[] = [
   {
-    company: "Freelance",
+    company: "DMK3",
+    name: "ITESP - Fundação Instituto de Terras de São Paulo",
+    text: "Quickly developed new features for a transportation control, expense management, and billing recording system, modernizing a legacy system and integrating the entire existing database into an Oracle database, which guaranteed operational continuity and enabled the evolution of the platform without the need for complex migrations.",
+    image: "./dmk3.png",
+    competences: [
+      "Oracle",
+      "NodeJS",
+      "React",
+      "MySQL",
+      "Git",
+    ],
+    year: 2025,
+  },
+  {
+    company: "Inovally",
+    name: "Sistema de Gestão de Documentos",
+    text: "At Inovally, I was responsible for developing the complete login and registration flow via Firebase with user control, in addition to creating personalized configuration menus for each client, including managing profiles and roles in the administrative view. One of the main milestones was the delivery of interfaces for generating court documents, which significantly streamlined bureaucratic processes in city halls, facilitating the verification of debts and directly contributing to greater efficiency in municipal collections.",
+    image: "./inovally.webp",
+    competences: [
+      "NodeJS",
+      "Angular",
+      "React",
+      "Git",
+    ],
+    year: 2024,
+  },
+  {
+    company: "Zoho",
     name: "CRM7",
-    text: "I currently work at CRM7 as a Product Owner. I started my journey on the team as a backend developer and, from the beginning, I was interested in working with people. In the first meetings, he realized that he was required to understand customer needs and be able to transform these demands into intelligent solutions. In my fifth month, I became Product Owner of one of the company's main projects, taking responsibility for ensuring the quality of services and deliveries.",
-    image: "./holymoly.webp",
+    text: "I worked at CRM7 as a Product Owner. I started my journey on the team as a backend developer and, from the beginning, I was interested in working with people. In the first meetings, he realized that he was required to understand customer needs and be able to transform these demands into intelligent solutions. In my fifth month, I became Product Owner of one of the company's main projects, taking responsibility for ensuring the quality of services and deliveries.",
+    image: "./crm7.png",
     competences: [
       "ZOHO",
       "WordPress",
       "NodeJS",
-      "Git",
       "Yoast SEO",
-      "Axios",
       "Git",
       "HTML5",
     ],
@@ -194,7 +241,6 @@ const careerProjectsEn: careerProjectsProps[] = [
       "Styled Components",
       "NodeJS",
       "Express",
-      "Axios",
       "Git",
     ],
     year: 2023,
@@ -218,7 +264,6 @@ const careerProjectsEn: careerProjectsProps[] = [
       "Styled Components",
       "Typescript",
       "SEO",
-      "Axios",
       "Git",
     ],
     year: 2022,
@@ -263,7 +308,6 @@ const careerProjectsEn: careerProjectsProps[] = [
       "Typescript",
       "Styled Components",
       "Git",
-      "Axios",
       "SEO",
     ],
     year: 2021,
@@ -302,11 +346,8 @@ const careerProjectsEn: careerProjectsProps[] = [
   },
 ];
 
-switch (i18n.language) {
-  case "pt-BR":
-    careerProjects = careerProjectsPt;
-    break;
-  default:
-    careerProjects = careerProjectsEn;
-    break;
-}
+i18n.language === "pt-BR"
+  ? (careerProjects.push(...careerProjectsPt))
+  : (careerProjects.push(...careerProjectsEn));
+
+export default careerProjects;

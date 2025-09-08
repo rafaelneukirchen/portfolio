@@ -1,5 +1,4 @@
 import i18n from "../i18n";
-import { useEffect } from "react";
 
 interface MenuOptionsProps {
   image: string;
@@ -7,7 +6,7 @@ interface MenuOptionsProps {
   link: string;
 }
 
-export let menuOptions: MenuOptionsProps[];
+export let menuOptions: MenuOptionsProps[] = [];
 
 const menuOptionsPt: MenuOptionsProps[] = [
   {
@@ -30,16 +29,6 @@ const menuOptionsPt: MenuOptionsProps[] = [
     title: "Contato",
     link: "contato",
   },
-  {
-    image: "chamado",
-    title: "Feedback",
-    link: "feedback",
-  },
-  // {
-  //   image: "tabuleiro",
-  //   title: "Chess",
-  //   link: "chess",
-  // },
 ];
 
 const menuOptionsEn: MenuOptionsProps[] = [
@@ -62,17 +51,7 @@ const menuOptionsEn: MenuOptionsProps[] = [
     image: "email",
     title: "Contact",
     link: "contato",
-  },
-  {
-    image: "chamado",
-    title: "Feedback",
-    link: "feedback",
-  },
-  // {
-  //   image: "tabuleiro",
-  //   title: "Chess",
-  //   link: "chess",
-  // },
+  }
 ];
 
 i18n.language === "pt-BR"

@@ -17,8 +17,6 @@ const Contact: React.FC = () => {
 
   const sendEmail = useCallback(
     async (e: any) => {
-      console.log(user);
-
       let userSchema = object().shape({
         textbox: string().required(t("contact.errors.textbox") || ""),
         email: string()

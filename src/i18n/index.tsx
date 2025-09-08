@@ -9,7 +9,6 @@ const resources = {
 };
 
 i18n.use(initReactI18next).init({
-  // debug: true,
   resources,
   lng: localStorage.getItem("i18nextLng") || "pt-BR",
   interpolation: { escapeValue: false },

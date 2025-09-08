@@ -14,15 +14,14 @@ import { MdLanguage, MdOutlineLibraryBooks } from "react-icons/md";
 import { IoIosMegaphone } from "react-icons/io";
 import isMobile from "../../hooks/useMobile";
 import * as S from "./styles";
-import { FaChessBoard } from "react-icons/Fa";
 import { menuOptions } from "../allLinks";
 import { useTranslation } from "react-i18next";
 import i18n from "../../i18n";
 
 const Header: React.FC = () => {
-  const [isClosed, setClosed] = useState(true);
+  const [isClosed, setIsClosed] = useState(true);
   const navigate = useNavigate();
-  const [scrollTopVisible, setScrolltopVisible] = useState(false);
+  const [scrollTopVisible, setScrollTopVisible] = useState(false);
   const [lang, setLang] = useState(
     localStorage.getItem("i18nextLng") || "pt-BR"
   );
@@ -36,7 +35,7 @@ const Header: React.FC = () => {
   }, []);
 
   const toggleMenu = useCallback(() => {
-    setClosed((isActive) => !isActive);
+    setIsClosed((isActive) => !isActive);
   }, [isClosed]);
 
   const SmoothScroll = useCallback(
@@ -45,7 +44,7 @@ const Header: React.FC = () => {
         navigate("/");
       }
 
-      setClosed(true);
+      setIsClosed(true);
       setTimeout(() => {
         let elementYpos = document
           .querySelector(`#${link}`)!
@@ -63,7 +62,7 @@ const Header: React.FC = () => {
         });
       }, 300);
     },
-    [setClosed]
+    [setIsClosed]
   );
 
   useEffect(() => {
@@ -81,15 +80,14 @@ const Header: React.FC = () => {
 
     window.addEventListener("scroll", () => {
       document.body.scrollTop > 120 || document.documentElement.scrollTop > 120
-        ? setScrolltopVisible(true)
-        : setScrolltopVisible(false);
+        ? setScrollTopVisible(true)
+        : setScrollTopVisible(false);
     });
 
-    //mobile
     window.addEventListener("touchmove", () => {
       document.body.scrollTop > 120 || document.documentElement.scrollTop > 120
-        ? setScrolltopVisible(true)
-        : setScrolltopVisible(false);
+        ? setScrollTopVisible(true)
+        : setScrollTopVisible(false);
     });
   }, [window, document, selectRef, lang]);
 
@@ -98,13 +96,8 @@ const Header: React.FC = () => {
       <S.Links>
         {menuOptions.map((option, index) => {
           return (
-            <React.Fragment key={index}>
+            <React.Fragment key={option.title}>
               <S.Link
-                className={
-                  option.title.toLowerCase() === "chess" && isMobile()
-                    ? "hidden"
-                    : ""
-                }
                 onClick={() => SmoothScroll(option.link)}
               >
                 <RiArrowRightLine className="arrow" color="#BFD8BD" size={22} />
@@ -122,9 +115,6 @@ const Header: React.FC = () => {
                 )}
                 {option.image == "chamado" && (
                   <IoIosMegaphone color="#BFD8BD" size={24} />
-                )}
-                {option.image == "tabuleiro" && (
-                  <FaChessBoard color="#BFD8BD" size={24} />
                 )}
                 <span>{option.title}</span>
               </S.Link>
@@ -165,9 +155,6 @@ const Header: React.FC = () => {
             <S.Line></S.Line>
           </S.Nav>
           <S.Body>
-            {/* <a href={window.location.host}>
-              <img src="./logo.png" alt="Imagem da logo" />
-            </a> */}
             {Links}
             <S.Socials>
               <div>

@@ -1,11 +1,11 @@
-import React, { useCallback, useState } from "react";
+import React, { useState } from "react";
 import { Navigation, A11y } from "swiper";
 import { SwiperSlide } from "swiper/react";
 import * as S from "./styles";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/scrollbar";
-import { careerProjects } from "../../careerprojects";
+import careerProjects from "../../careerprojects";
 import { CgScrollH } from "react-icons/Cg";
 import Project from "../Project";
 import { useTranslation } from "react-i18next";
@@ -13,18 +13,6 @@ import { useTranslation } from "react-i18next";
 const CarouselSection: React.FC = () => {
   const [actualSlide, setActualSlide] = useState(0);
   const { t } = useTranslation();
-
-  const verifyActualSwiper = useCallback(() => {
-    setTimeout(() => {
-      let activeSwiperSlide = document.querySelector(".swiper-slide-active");
-      if (activeSwiperSlide) {
-        const index = activeSwiperSlide.getAttribute("data-swiper-slide-index");
-        if (index) {
-          setActualSlide(Number(index));
-        }
-      }
-    }, 200);
-  }, []);
 
   return (
     <S.SwiperWrapper id="carreira">
@@ -35,6 +23,7 @@ const CarouselSection: React.FC = () => {
       <S.Swiper
         modules={[Navigation, A11y]}
         slidesPerView={1}
+        centeredSlides
         navigation
         spaceBetween={24}
         breakpoints={{
@@ -45,13 +34,12 @@ const CarouselSection: React.FC = () => {
             slidesPerView: 3,
           },
         }}
-        loop
-        onSwiper={() => verifyActualSwiper()}
-        onSlideChange={() => verifyActualSwiper()}
+        onSwiper={(swiper) => setActualSlide(swiper.realIndex)}
+        onSlideChange={(swiper) => setActualSlide(swiper.realIndex)}
       >
         {careerProjects.map((project, i) => {
           return (
-            <SwiperSlide key={i}>
+            <SwiperSlide key={project.name + i}>
               <img
                 src={project.image}
                 alt={`Foto do projeto ${project.name}`}

@@ -9,18 +9,16 @@ import Contact from "../../components/Contact";
 
 const Home: React.FC = () => {
   return (
-    <>
-      <main>
-        <Header />
-        <S.ContentWrapper>
-          <Caller />
-          <CarouselSection />
-        </S.ContentWrapper>
-        <AboutMe />
-        <Contact />
-        <Footer />
-      </main>
-    </>
+    <main>
+      <Header />
+      <S.ContentWrapper>
+        <Caller />
+        <CarouselSection />
+      </S.ContentWrapper>
+      <AboutMe />
+      <Contact />
+      <Footer />
+    </main>
   );
 };
 
